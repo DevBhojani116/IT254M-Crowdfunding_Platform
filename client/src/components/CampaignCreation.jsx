@@ -1,4 +1,6 @@
 import {ethers} from "ethers"
+import Campaign from "./Campaign";
+import CampaignsDisplay from "./CampaignsDisplay";
 const CampaignCreation=({state})=>{
 
     const createCampaign = async(event)=>{
@@ -15,7 +17,6 @@ const CampaignCreation=({state})=>{
     }
     return  (
       <div className="center">
-       {/* <h1>Thanks</h1> */}
         <form onSubmit={createCampaign}>
           <div className="inputbox">
             <input type="text" required="required" id="name" />

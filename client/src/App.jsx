@@ -5,6 +5,7 @@ import abi from "./contractJson/Crowdfunding.json";
 import { ethers } from "ethers";
 import Home from "./pages/Home";
 import CampaignCreation from "./components/CampaignCreation";
+import CampaignsDisplay from "./components/CampaignsDisplay";
 
 //0xA91dD1Ba3C27436540c8D6E8f69E71C5a3A517bA
 function App() {
@@ -44,17 +45,27 @@ function App() {
     template();
   }, []);
 
+//   const [campaigns, setCampaigns] = useState([]);
+// const getCampaigns = async() =>
+// {
+//   const campaigns = await contract.viewCampaigns();
+//   setCampaigns(campaigns)
+// }
+// useEffect(() =>
+// {
+//     getCampaigns();
+// },[])
   return (
     <div>
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* {categories.map((category) => (
-            <Route key = {`/${category._id}`} path={`/${category._id}`} element={<Questions data={category}/>} />
+          <Route path="/" element={<Home state = {state} />} />
+          {/* {campaigns.map((campaign) => (
+            <Route key = {`/${campaign.campaignNumber}`} path={`/${campaign.campaignNumber}`} element={<CampaignsDisplay data={campaign}/>} />
           ))} */}
         </Routes>
     </BrowserRouter>
-    <CampaignCreation state = {state}/>
+    {/* <CampaignCreation state = {state}/> */}
   </div>
   );
 }

@@ -1,14 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import "../App.css";
-// import Categories from "../../components/Campaigns.jsx";
-function Home() {
+import CampaignsDisplay from "../components/CampaignsDisplay.jsx";
+import CampaignCreation from "../components/CampaignCreation.jsx";
+const Home = ({state}) => {
+    // event.preventDefault();
+    // const {contract}=state;
+    const createCampaign = () => {
+        return (<><CampaignCreation state = {state}/></>)
+    }
   return (
     <div className = "app">
-      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white">Crowdfunding<span class="text-[#E65F5C] dark:text-[#E65F5C]"> Platform</span></h1>
+      <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white">Crowdfunding<span class="text-[#E65F5C] dark:text-[#E65F5C]"> Platform</span></h1>
       <div className="container">
-        {/* <Campaigns /> */}
+        <CampaignsDisplay state = {state} />
       </div>
+      {/* <button onClick={createCampaign}></button> */}
+      <CampaignCreation state = {state}/>
     </div>
   );
 }
