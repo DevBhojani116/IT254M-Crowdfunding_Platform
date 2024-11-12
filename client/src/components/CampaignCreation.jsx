@@ -1,5 +1,5 @@
 import {ethers} from "ethers"
-import Campaign from "./Campaign";
+import CampaignCard from "./CampaignCard";
 import CampaignsDisplay from "./CampaignsDisplay";
 const CampaignCreation=({state})=>{
 
@@ -12,7 +12,7 @@ const CampaignCreation=({state})=>{
       const endDate = document.querySelector("#endDate").value;
       const transaction = await contract.createCampaign(name,message,endDate,amount)
       await transaction.wait();
-      alert("Campaign Creation is successul");
+      alert("Campaign Creation is successful");
       window.location.reload();
     }
     return  (

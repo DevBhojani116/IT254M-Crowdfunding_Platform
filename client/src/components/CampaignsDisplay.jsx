@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CampaignCreation from "./CampaignCreation.jsx";
-import Campaign from "./Campaign.jsx";
+import CampaignCard from "./CampaignCard.jsx";
 const CampaignsDisplay = ({ state }) => {
 
   const [campaigns, setCampaigns] = useState([]);
@@ -21,7 +21,7 @@ const CampaignsDisplay = ({ state }) => {
   return (
     <>
       {campaigns.map((campaign) => (
-        <Campaign
+        <CampaignCard
           campaignNumber={campaign.campaignNumber}
           cause={campaign.cause}
           futurePlans={campaign.futurePlans}
@@ -29,6 +29,7 @@ const CampaignsDisplay = ({ state }) => {
           endDate={campaign.endDate}
           requiredAmount={campaign.requiredAmount}
           raisedAmount={campaign.raisedAmount}
+          state = {state}
         />
       ))}
     </>
